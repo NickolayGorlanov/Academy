@@ -27,7 +27,7 @@
 
 ### 3. Добавить таблицы по приложенной схеме рис. 1 (названия полей, связи между таблицами должны соответствовать схеме, остальное (ограничения целостности, уникальность, значения по умолчанию, проверки, типы данных) на усмотрение стажера).
 
-![Рис. 1](https://drive.google.com/file/d/1MGNyIreLzV-vbdEpJKLIsslqP7nPBVx2/view?usp=sharing)
+![Рис. 1]([[https://drive.google.com/file/d/1MGNyIreLzV-vbdEpJKLIsslqP7nPBVx2/view?usp=sharing](https://github.com/NickolayGorlanov/Academy/blob/main/BD.png)](https://github.com/NickolayGorlanov/Academy/blob/main/BD.png))
 Приложить скрипт
 
 Создаём три связанные таблицы:
