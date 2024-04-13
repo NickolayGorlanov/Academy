@@ -8,22 +8,22 @@
 1. Установка PostgreSQL (в Docker)
 
 ### Установка Docker
-curl -fsSL https://get.docker.com | sh
+<pre>curl -fsSL https://get.docker.com | sh</pre>
 
 ### Запуск PostgreSQL
-sudo docker run -it --name academy -p 5432:5432 -e POSTGRES_PASSWORD=pswd111 postgres  
+<pre>sudo docker run -it --name academy -p 5432:5432 -e POSTGRES_PASSWORD=pswd111 postgres</pre>
 
 ### 2. Создать БД academy.
 Приложить скрипт
 
 В новом окне терминала: 
-sudo docker exec -it academy bash
+<pre>sudo docker exec -it academy bash</pre>
 
 Подключаемся к PostgreSQL:
-psql -U postgres
+<pre>psql -U postgres</pre>
 
 Создаём новую БД: 
-CREATE DATABASE academy;
+<pre>CREATE DATABASE academy;</pre>
 
 ### 3. Добавить таблицы по приложенной схеме рис. 1 (названия полей, связи между таблицами должны соответствовать схеме, остальное (ограничения целостности, уникальность, значения по умолчанию, проверки, типы данных) на усмотрение стажера).
 Приложить скрипт
@@ -62,7 +62,7 @@ CREATE TABLE exams (
 Приложить скрипт
 
 -- Удаляем все записи об экзаменах
-DELETE FROM exams;
+<pre>DELETE FROM exams;
 
 -- Вставляем случайные данные в таблицу students
 INSERT INTO students (s_id, name, start_year)
@@ -104,31 +104,31 @@ FROM (
 CROSS JOIN LATERAL (
     SELECT cno FROM courses ORDER BY random() LIMIT 5
 ) AS courses;
-
+</pre>
 ### 5. Написать запрос, который возвращает всех студентов, которые еще не сдали ни одного экзамена.
 Приложить скрипт
 
-SELECT *
+<pre>SELECT *
 FROM students
-WHERE sid NOT IN (SELECT s_id FROM exams);
+WHERE sid NOT IN (SELECT s_id FROM exams);</pre>
 
 ### 6. Написать запрос, который возвращает список студентов и количество сданных им экзаменов. Только для студентов, у которых есть сданные экзамены.
 Приложить скрипт
 
-SELECT s.sid, s.name, COUNT(e.s_id) AS exams_count
+<pre>SELECT s.sid, s.name, COUNT(e.s_id) AS exams_count
 FROM students s
 LEFT JOIN exams e ON s.sid = e.s_id
 GROUP BY s.sid, s.name
-HAVING COUNT(e.s_id) > 0;
+HAVING COUNT(e.s_id) > 0; </pre>
 
 ### 7. Вывести список курсов со средним баллом по экзамену. Список отсортирован по убыванию среднего балла.
 Приложить скрипт
 
-SELECT c.cno, c.title, AVG(e.score) AS avg_score
+<pre>SELECT c.cno, c.title, AVG(e.score) AS avg_score
 FROM courses c
 JOIN exams e ON c.cno = e.cno
 GROUP BY c.cno, c.title
-ORDER BY avg_score DESC;
+ORDER BY avg_score DESC; </pre>
 
 # 1. Теория
 
