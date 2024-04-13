@@ -61,8 +61,8 @@ CREATE TABLE exams (
 ### 4. Добавить несколько записей в таблицы. 
 Приложить скрипт
 
--- Удаляем все записи об экзаменах
-<pre>DELETE FROM exams;
+<pre>-- Удаляем все записи об экзаменах
+DELETE FROM exams;
 
 -- Вставляем случайные данные в таблицу students
 INSERT INTO students (s_id, name, start_year)
