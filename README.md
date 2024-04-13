@@ -8,8 +8,7 @@
 1. Установка PostgreSQL (в Docker)
 
 ### Установка Docker
-<details>
-<summary>curl -fsSL https://get.docker.com | sh</summary>
+curl -fsSL https://get.docker.com | sh
 
 ### Запуск PostgreSQL
 sudo docker run -it --name academy -p 5432:5432 -e POSTGRES_PASSWORD=pswd111 postgres  
