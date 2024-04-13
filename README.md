@@ -30,7 +30,7 @@ CREATE DATABASE academy;
 
 Создаём три связанные таблицы:
 
-<code>-- Студенты
+<pre>-- Студенты
 CREATE TABLE students (
     sid SERIAL PRIMARY KEY,
     s_id INTEGER UNIQUE NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE exams (
     score INTEGER NOT NULL,
     FOREIGN KEY (s_id) REFERENCES students (sid),
     FOREIGN KEY (cno) REFERENCES courses (cno)
-); </code>
+); </pre>
 
 
 ### 4. Добавить несколько записей в таблицы. 
